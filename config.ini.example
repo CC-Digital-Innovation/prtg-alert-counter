@@ -1,0 +1,10 @@
+[main]
+# number of logs per second (inclusive) before triggering pause
+threshold = 10
+# notfication template id to pause
+notification_id = #
+
+[prtg]
+base_url = http://example.com
+username = ******
+passhash = ******
