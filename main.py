@@ -6,6 +6,7 @@ from fastapi import FastAPI, Form
 from loguru import logger
 
 from config import config
+import opsgenie
 import prtg
 
 THRESHOLD = config['main'].getint('threshold')
@@ -43,6 +44,7 @@ async def increment(date_time: str):
     '''
     parsed_datetime = datetime.strptime(date_time, '%m/%d/%Y %I:%M:%S %p')
     count = await ingest_counter.increment(parsed_datetime)
+    # find delay between alert time and the time counted
     delay = (datetime.utcnow() - parsed_datetime).total_seconds()
     logger.info(f'Count: {count} | Delay: {delay}')
     is_paused = False
@@ -50,9 +52,14 @@ async def increment(date_time: str):
     if count >= THRESHOLD:
         if prtg.get_notification_status(NOTIFICATION_ID):
             prtg.pause_notification(NOTIFICATION_ID)
+            # build and send Opsgenie alert
+            message = f'[Alert-Counter] PRTG Alert Threshold Exceeded (count: {THRESHOLD}). \
+                Notification template with ID {NOTIFICATION_ID} paused.'
+            description = 'Alert-Counter counts the number of alerts from PRTG and will pause \
+                a configured notification template after a threshold (number of alerts per second) is met.'
+            opsgenie.send_alert(message, description=description, tags=['jle-dev', 'PRTG', 'Alert-Counter'])
             paused = True
         is_paused = True
-        # alert to Opsgenie that notfiications for this template has been paused
     return {
         'count': count,
         'threshold_reached': is_paused,
@@ -94,16 +101,22 @@ async def create_log(device: str = Form(...),
                 sensor_id: str = Form(..., alias='id')) -> dict:
     parsed_datetime = datetime.strptime(date_time, '%m/%d/%Y %I:%M:%S %p')
     count = await ingest_counter.increment(parsed_datetime)
+    # find delay between alert time and the time counted
     delay = (datetime.utcnow() - parsed_datetime).total_seconds()
-    logger.info(f'Count: {count} | Delay: {delay}')
+    logger.info(f'Count: {count} | Delay: {delay}s')
     is_paused = False
     paused = False
     if count >= THRESHOLD:
         if prtg.get_notification_status(NOTIFICATION_ID):
             prtg.pause_notification(NOTIFICATION_ID)
+            # build and send Opsgenie alert
+            message = f'[Alert-Counter] PRTG Alert Threshold Exceeded (count: {THRESHOLD}). \
+                Notification template with ID {NOTIFICATION_ID} paused.'
+            description = 'Alert-Counter counts the number of alerts from PRTG and will pause \
+                a configured notification template after a threshold (number of alerts per second) is met.'
+            opsgenie.send_alert(message, description=description, tags=['jle-dev', 'PRTG', 'Alert-Counter'])
             paused = True
         is_paused = True
-        # alert to Opsgenie that notfiications for this template has been paused
     return {
         'count': count,
         'threshold_reached': is_paused,
