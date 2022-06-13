@@ -1,4 +1,7 @@
-- name: marp-action
-  # You may pin to the exact commit or the version.
-  # uses: ralexander-phi/marp-action@201b8b4780ed65a11eb1533a0b917fc4d9ebc0e6
-  uses: ralexander-phi/marp-action@1.0.0
+on: push
+name: Marp Build
+jobs:
+  marp-build:
+    steps:
+      - name: marp-action
+      - uses: ralexander-phi/marp-action@1.0.0
