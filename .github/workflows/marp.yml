@@ -3,12 +3,11 @@ name:  AI
 on: 
   push:
     branches: [ "main" ]
-    
+
 jobs:
   build:
     
     run-on: ubuntu-latest
     
     steps:
-      - name: marp-action
       - uses: ralexander-phi/marp-action@1.0.0
