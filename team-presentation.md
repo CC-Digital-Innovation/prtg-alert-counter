@@ -1,8 +1,9 @@
 ---
 theme: gaia
-_class: lead
+class: invert
 paginate: true
-backgroundColor: #fff
+backgroundColor: #000
+marp: true
 ---
 
 # 
@@ -13,14 +14,12 @@ backgroundColor: #fff
 
 # **Team Introductions**
 
-![bg](https://user-images.githubusercontent.com/103965932/173463669-ca46743c-5b2a-48e2-83e3-78382bce2354.jpg)
+![bg](https://user-images.githubusercontent.com/103965932/173463669-ca46743c-5b2a-48e2-83e3-78382bce2354.jpg )
 ![bg](https://user-images.githubusercontent.com/103965932/173463695-2bdd4dec-b4ab-4ae0-a6ab-4aaba77087fd.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463684-ea7c6dce-e8c5-417d-a7fb-a3c6d73f6c95.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463689-25b9b672-4118-4b31-a673-3906d5aeee7e.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463646-0134093e-9cfc-4dac-9c1c-6599bea7033e.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463651-7cc6143d-df45-4be4-b42d-08031d79e58d.jpg)
-<BR>
-<BR>
 ![justify-content bottom](https://user-images.githubusercontent.com/103965932/173463700-8cc56e77-270e-4c06-83e8-24b946b18c2a.png)
 ​
 ---
@@ -55,6 +54,27 @@ Add AI behind identifying and correlating alerts to crunch data and identify cor
 
 # **The Journey to the Solution**
 
+Deploying PRTG 
+-create an amazon account 
+-build an ec2 instance  
+-build/install/configure prtg on ec2 instance 
+-deploy servers to create sensors on prtg server 
+​
+Deploying Log server 
+-Deploy a server for collecting logs 
+-Install greylog application 
+-Configure greylog to collect logs from prtg 
+​
+---
+​
+Deploying Tensorflow 
+-Deploy an ec2 ubuntu and run updates 
+-Install tensorflow packages and run updates if needed 
+-Pull logs from syslog 
+-Train model 
+-Test model 
+
+
 --- 
 
 # **Wait...This Does Not Work**
@@ -72,11 +92,11 @@ Deploying an AI solution that can work off prtg message data is harder to setup 
 ---
 
 # **Overview of Solution**
-
+Descriptiong
 ---
 
 # **Let's Look Under the Hood**
-
+Work Flow diagram
 ---
 
 # **Results**
