@@ -9,6 +9,7 @@ backgroundColor: #fff
 
 ![bg 50%](https://user-images.githubusercontent.com/103965932/173462799-95b24a44-5926-426d-a1d2-92482b982c97.png)
 
+---
 
 # **Team Introductions**
 
@@ -22,9 +23,11 @@ backgroundColor: #fff
 <BR>
 ![justify-content bottom](https://user-images.githubusercontent.com/103965932/173463700-8cc56e77-270e-4c06-83e8-24b946b18c2a.png)
 ​
+---
 
 # **The Brainstorming Process**
 
+---
 
 # **The Problem**
 Automated alerts are handled by a group of new, L1 engineers.
@@ -36,6 +39,7 @@ Example: An alert about a UPS on battery backup comes in. An hour later the site
 
 ![bg opacity:.3](https://img.huffingtonpost.com/asset/5b9d1023240000300094edab.jpeg?ops=scalefit_720_noupscale)
 
+---
 
 # **Our Solution (Version 1.0)**
 
@@ -47,31 +51,40 @@ Add AI behind identifying and correlating alerts to crunch data and identify cor
 
 ![bg left fit](https://w7.pngwing.com/pngs/182/517/png-transparent-ted-eureka-university-college-of-engineering-osmania-university-student-education-organizing-miscellaneous-text-logo.png)
 
+---
 
 # **The Journey to the Solution**
 
+--- 
 
 # **Wait...This Does Not Work**
 
+Deploying an AI solution that can work off prtg message data is harder to setup than originally thought. 
+
+---
 
 # **Time for Reflection**
 
+---
 
 # **Our Solution (Version 2.0)** 
 
+---
 
 # **Overview of Solution**
 
+---
 
 # **Let's Look Under the Hood**
 
+---
 
 # **Results**
 
+---
 
 # **Future Road Map**
 
-Future road map of feature enhancements:
+[![](https://mermaid.ink/img/pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)](https://mermaid.live/edit#pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)
 
-
-
+---
