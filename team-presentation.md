@@ -4,13 +4,36 @@ class: invert
 paginate: true
 backgroundColor: #000
 marp: true
+style: |
+  img[alt~=bottom-center] {
+    display: block;
+    margin: 0 auto;
+    padding-top: 350px;
+  }
+
+  .center {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .columns-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .columns-2-33 {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+  }
 ---
 
-# 
-
-![bg 50%](https://user-images.githubusercontent.com/103965932/173462799-95b24a44-5926-426d-a1d2-92482b982c97.png)
+![bg fit](https://user-images.githubusercontent.com/103965932/173462799-95b24a44-5926-426d-a1d2-92482b982c97.png)
 
 ---
+
+<!--_class: lead invert-->
 
 # **Team Introductions**
 
@@ -20,8 +43,9 @@ marp: true
 ![bg](https://user-images.githubusercontent.com/103965932/173463689-25b9b672-4118-4b31-a673-3906d5aeee7e.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463646-0134093e-9cfc-4dac-9c1c-6599bea7033e.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463651-7cc6143d-df45-4be4-b42d-08031d79e58d.jpg)
-![justify-content bottom](https://user-images.githubusercontent.com/103965932/173463700-8cc56e77-270e-4c06-83e8-24b946b18c2a.png)
-​
+
+![bottom-center w:1150px](https://user-images.githubusercontent.com/103965932/173463700-8cc56e77-270e-4c06-83e8-24b946b18c2a.png)
+
 ---
 
 # **The Brainstorming Process**
@@ -56,17 +80,17 @@ Add AI behind identifying and correlating alerts to crunch data and identify cor
 
 Deploying PRTG 
 -create an amazon account 
--build an ec2 instance  
+-build an ec2 instance
 -build/install/configure prtg on ec2 instance 
 -deploy servers to create sensors on prtg server 
-​
+
 Deploying Log server 
 -Deploy a server for collecting logs 
 -Install greylog application 
 -Configure greylog to collect logs from prtg 
-​
+
 ---
-​
+
 Deploying Tensorflow 
 -Deploy an ec2 ubuntu and run updates 
 -Install tensorflow packages and run updates if needed 
@@ -74,12 +98,49 @@ Deploying Tensorflow
 -Train model 
 -Test model 
 
-
 --- 
 
 # **Wait...This Does Not Work**
 
+<div class="columns-2">
+<div>
+
 Deploying an AI solution that can work off prtg message data is harder to setup than originally thought. 
+
+* Noisy syslog messages
+* Not enough **useful** data
+* Noisy results
+
+</div>
+<div>
+
+![w:420px](images/mess.jpg)
+
+</div>
+</div>
+
+<!--
+- unparsed syslog messages
+- trouble filtering useful data
+- not enough data
+- garbage in, garbage out
+-->
+
+---
+
+<div class="center">
+
+![w:300px](images/bad-input.png)![w:750px](images/bad-input-2.png)
+![h:230px](images/bad-data.png)![h:300px](images/noisy-data.png)
+
+</div>
+
+<!--
+- top-left: unaggregatable data
+- top-right: noisy syslog message, emphasize repeated words
+- bottom-left: bad data
+- bottom-right: noisy results
+-->
 
 ---
 
@@ -92,19 +153,54 @@ Deploying an AI solution that can work off prtg message data is harder to setup 
 ---
 
 # **Overview of Solution**
-Descriptiong
+
+Description
+
 ---
 
+<!--
+_backgroundColor: #1e1e1e
+-->
+
 # **Let's Look Under the Hood**
-Work Flow diagram
+
+![w:1150px](images/solution-flowchart.svg)
+![w:900px](images/solution-flowchart-2.svg)
+
+<!--
+- 
+- As a result...
+-->
+
 ---
 
 # **Results**
+
+<div class="columns-2-33">
+<div>
+
+![w:400px](images/prtg_test_down.png)
+![w:400px](images/api-test-output.png)
+
+</div>
+<div>
+
+ ![w:675px](images/opsgenie-test.png)
+
+</div>
+</div>
+
+<!--
+- prevents mass, unnecessary alerts and ticket creation
+- proactive, automatic approach
+- custom, disgestable alert to escalate
+- top-left: example error sending mass alerts
+- bottom-left: api counter alerts
+- right: custom opsgenie alert, as oppose to mass alerts
+-->
 
 ---
 
 # **Future Road Map**
 
 [![](https://mermaid.ink/img/pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)](https://mermaid.live/edit#pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)
-
----
