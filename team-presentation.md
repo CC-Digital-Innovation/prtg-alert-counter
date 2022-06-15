@@ -140,7 +140,9 @@ Deploying an AI solution that can work off prtg message data is harder to setup 
 
 # **Our Solution (Version 2.0)** 
 
-Our new solution monitors the rate at which alerts are generated and programmatically protects our alert workflow progess in the event a large spike in alers is received.  By simplifying our approach to the overall problem of controlling massive spikes (anomolies) in our PRTG alert, we were able to quickly bring to market a working solution that not only addresses our immediate need, but allows us to build upon with future releases. 
+"Instead of using AI, we became the AI"
+
+Our new solution monitors the rate at which alerts are generated and programmatically protects our alert workflow process in the event a large spike in alers is received.  By simplifying our approach to the overall problem of controlling massive spikes (anomolies) in our PRTG alert, we were able to quickly bring to market a working solution that not only addresses our immediate need, but allows us to build upon with future releases. 
 
 ---
 
