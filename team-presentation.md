@@ -50,6 +50,12 @@ style: |
 
 # **The Brainstorming Process**
 
+Project ideas:
+- AI analysis of difficulty of customers
+- AI analysis of PRTG Alerts
+- AI analysis of time spent trends
+
+
 ---
 
 # **The Problem**
@@ -78,25 +84,11 @@ Add AI behind identifying and correlating alerts to crunch data and identify cor
 
 # **The Journey to the Solution**
 
-Deploying PRTG 
--create an amazon account 
--build an ec2 instance
--build/install/configure prtg on ec2 instance 
--deploy servers to create sensors on prtg server 
+[![](https://mermaid.ink/img/pako:eNo10MlqwzAQBuBXGebkQEKgRx8KtRVyLW1uVQ-DNHYEWoyWQBLy7pWX6iIx-mb4pSeqoBlbHCNNV7gI6aGujx_Bkw1340f4_Lqcf-FweIeu6SNTZiAP5OgR6qZUKD7v1rZuYX3TFWP1rFi9gfEpk1e8mX4xYjXH5dLaowp-MGOJDFPM40bFQk_NmgUSxxvHBDmAWnMk9inUSg0yt21ih3t0HB0ZXR_2nGdJzFd2LLGtR80DFZslSv-qtEy6zjppk0PEdiCbeI9Ucvi-e4VtjoX_kTBU_8lt6vUHgXBoJw)](https://mermaid.live/edit#pako:eNo10MlqwzAQBuBXGebkQEKgRx8KtRVyLW1uVQ-DNHYEWoyWQBLy7pWX6iIx-mb4pSeqoBlbHCNNV7gI6aGujx_Bkw1340f4_Lqcf-FweIeu6SNTZiAP5OgR6qZUKD7v1rZuYX3TFWP1rFi9gfEpk1e8mX4xYjXH5dLaowp-MGOJDFPM40bFQk_NmgUSxxvHBDmAWnMk9inUSg0yt21ih3t0HB0ZXR_2nGdJzFd2LLGtR80DFZslSv-qtEy6zjppk0PEdiCbeI9Ucvi-e4VtjoX_kTBU_8lt6vUHgXBoJw)
 
-Deploying Log server 
--Deploy a server for collecting logs 
--Install greylog application 
--Configure greylog to collect logs from prtg 
+[![](https://mermaid.ink/img/pako:eNo9kLFqw0AMhl9FaHIgeQEPhcTuUOiWbnUG4ZMvB-fTIcsFE_Luvdh1NQnp-z-QHtiLY6zRK-U7fLVdglLn75ZzlCUkD5_i4cr6w3qD0-kNLtW2A4JpHcMgCr3EyL29AlH8BIdNdFkjTfWRJqMYwSsvZQ-Ucww9WZC0o82KtlUjaQh-Vv6HTXb95h5URshqHg54xJF1pODKDY-XqEO788gd1qV1PNAcrcMuPQs6Z0fG7y6YKNYDxYmPSLPJdUk91qYz71AbqLxk_KOevydBYuY)](https://mermaid.live/edit#pako:eNo9kLFqw0AMhl9FaHIgeQEPhcTuUOiWbnUG4ZMvB-fTIcsFE_Luvdh1NQnp-z-QHtiLY6zRK-U7fLVdglLn75ZzlCUkD5_i4cr6w3qD0-kNLtW2A4JpHcMgCr3EyL29AlH8BIdNdFkjTfWRJqMYwSsvZQ-Ucww9WZC0o82KtlUjaQh-Vv6HTXb95h5URshqHg54xJF1pODKDY-XqEO788gd1qV1PNAcrcMuPQs6Z0fG7y6YKNYDxYmPSLPJdUk91qYz71AbqLxk_KOevydBYuY)
 
----
-
-Deploying Tensorflow 
--Deploy an ec2 ubuntu and run updates 
--Install tensorflow packages and run updates if needed 
--Pull logs from syslog 
--Train model 
--Test model 
+[![](https://mermaid.ink/img/pako:eNpdkE1rwzAMhv-K0CmF9rJjDoO1yWC3wXKrd9BiJTW15eAPRij97_OSlMF0kngfPVi-Ye81Y41joOkCXaMESr2cG56sn42M0LFEHwbrv-ETDodnOFZrCCTA_RPkrywpl0lDyAJ50pQ4AuxW13FZOlVvEhNZC-nPN1F_pbGw_3fNAMKsWT8kp0XSVO-5GKwfIwzBO4hzLMPGNAvTVl0gI-DKXXZL2iV5rTqOaQtwj46DI6PL8bdfTGG6sGOFdWk1D5RtUqjkXtD1Xa02yQesB7KR90g5-Y9ZeqxTyPyAGkPlL91G3X8AU6xygA)](https://mermaid.live/edit#pako:eNpdkE1rwzAMhv-K0CmF9rJjDoO1yWC3wXKrd9BiJTW15eAPRij97_OSlMF0kngfPVi-Ye81Y41joOkCXaMESr2cG56sn42M0LFEHwbrv-ETDodnOFZrCCTA_RPkrywpl0lDyAJ50pQ4AuxW13FZOlVvEhNZC-nPN1F_pbGw_3fNAMKsWT8kp0XSVO-5GKwfIwzBO4hzLMPGNAvTVl0gI-DKXXZL2iV5rTqOaQtwj46DI6PL8bdfTGG6sGOFdWk1D5RtUqjkXtD1Xa02yQesB7KR90g5-Y9ZeqxTyPyAGkPlL91G3X8AU6xygA)
 
 --- 
 
