@@ -36,7 +36,11 @@ style: |
 <!--_class: lead invert-->
 
 # **Team Introductions**
-
+<!-- 
+Presenter: SUMMER MARKLEY
+Highlights: How we can we came about our name and logo 
+Estimated Time:  2 mins
+-->
 ![bg](https://user-images.githubusercontent.com/103965932/173463669-ca46743c-5b2a-48e2-83e3-78382bce2354.jpg )
 ![bg](https://user-images.githubusercontent.com/103965932/173463695-2bdd4dec-b4ab-4ae0-a6ab-4aaba77087fd.jpg)
 ![bg](https://user-images.githubusercontent.com/103965932/173463684-ea7c6dce-e8c5-417d-a7fb-a3c6d73f6c95.jpg)
@@ -49,15 +53,25 @@ style: |
 ---
 
 # **The Brainstorming Process**
-
+<!-- 
+Presenter:        JONNY LE
+Highlights:       Discuss how we as a team stepped through our initial ideas and formulated our final solution
+Estimated Time:   2 mins
+-->
 Project ideas:
 - AI analysis of difficulty of customers
 - AI analysis of PRTG Alerts
 - AI analysis of time spent trends
+- AI analysis of opsgenie
+
 
 
 ---
-
+<!-- 
+Presenter:        GABRIELLE WOODS
+Highlights:       See Gab's index cards
+Estimated Time:   5 mins
+-->
 # **The Problem**
 Automated alerts are handled by a group of new, L1 engineers.
 The sheer scale of alerting topics is daunting and too much to learn or research as applicable.
@@ -69,7 +83,11 @@ Example: An alert about a UPS on battery backup comes in. An hour later the site
 ![bg opacity:.3](https://img.huffingtonpost.com/asset/5b9d1023240000300094edab.jpeg?ops=scalefit_720_noupscale)
 
 ---
-
+<!-- 
+Presenter:        GABRIELLE WOODS
+Highlights:       See Gab's index cards
+Estimated Time:   5 mins
+-->
 # **Our Solution (Version 1.0)**
 
 Add AI behind identifying and correlating alerts to crunch data and identify correlations.
@@ -78,18 +96,35 @@ Add AI behind identifying and correlating alerts to crunch data and identify cor
 - Expedite escalation of important events
 - Bridge the gap between teams
 
-![bg left fit](https://w7.pngwing.com/pngs/182/517/png-transparent-ted-eureka-university-college-of-engineering-osmania-university-student-education-organizing-miscellaneous-text-logo.png)
+![bg left:33% fit](https://w7.pngwing.com/pngs/182/517/png-transparent-ted-eureka-university-college-of-engineering-osmania-university-student-education-organizing-miscellaneous-text-logo.png)
+
+---
+
+# **Step 1 - Engage the Project Manager!**
+<!-- 
+Presenter: SUMMER MARKLEY
+Highlights: Discuss how we built our initial project plan and the use of our SmartSheet portal
+Estimated Time:  5 mins
+-->
 
 ---
 
 # **The Journey to the Solution**
-
+<!-- 
+Presenter: RAK 
+Highlights: What did we build and how did we build it
+Estimated Time:  5 mins
+-->
 ![w:350px](https://mermaid.ink/img/pako:eNo10MlqwzAQBuBXGebkQEKgRx8KtRVyLW1uVQ-DNHYEWoyWQBLy7pWX6iIx-mb4pSeqoBlbHCNNV7gI6aGujx_Bkw1340f4_Lqcf-FweIeu6SNTZiAP5OgR6qZUKD7v1rZuYX3TFWP1rFi9gfEpk1e8mX4xYjXH5dLaowp-MGOJDFPM40bFQk_NmgUSxxvHBDmAWnMk9inUSg0yt21ih3t0HB0ZXR_2nGdJzFd2LLGtR80DFZslSv-qtEy6zjppk0PEdiCbeI9Ucvi-e4VtjoX_kTBU_8lt6vUHgXBoJw) ![w: 350px](https://mermaid.ink/img/pako:eNo9kLFqw0AMhl9FaHIgeQEPhcTuUOiWbnUG4ZMvB-fTIcsFE_Luvdh1NQnp-z-QHtiLY6zRK-U7fLVdglLn75ZzlCUkD5_i4cr6w3qD0-kNLtW2A4JpHcMgCr3EyL29AlH8BIdNdFkjTfWRJqMYwSsvZQ-Ucww9WZC0o82KtlUjaQh-Vv6HTXb95h5URshqHg54xJF1pODKDY-XqEO788gd1qV1PNAcrcMuPQs6Z0fG7y6YKNYDxYmPSLPJdUk91qYz71AbqLxk_KOevydBYuY) ![w:350px](https://mermaid.ink/img/pako:eNpdkE1rwzAMhv-K0CmF9rJjDoO1yWC3wXKrd9BiJTW15eAPRij97_OSlMF0kngfPVi-Ye81Y41joOkCXaMESr2cG56sn42M0LFEHwbrv-ETDodnOFZrCCTA_RPkrywpl0lDyAJ50pQ4AuxW13FZOlVvEhNZC-nPN1F_pbGw_3fNAMKsWT8kp0XSVO-5GKwfIwzBO4hzLMPGNAvTVl0gI-DKXXZL2iV5rTqOaQtwj46DI6PL8bdfTGG6sGOFdWk1D5RtUqjkXtD1Xa02yQesB7KR90g5-Y9ZeqxTyPyAGkPlL91G3X8AU6xygA)
 
 --- 
 
 # **Wait...This Does Not Work**
-
+<!-- 
+Presenter: JONNY LE 
+Highlights: How did this fail
+Estimated Time:  5 mins
+-->
 <div class="columns-2">
 <div>
 
@@ -191,4 +226,12 @@ _backgroundColor: #1e1e1e
 
 # **Future Road Map**
 
-[![](https://mermaid.ink/img/pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)](https://mermaid.live/edit#pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)
+![w:1200px](https://mermaid.ink/img/pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)
+
+
+### ROAD MAP
+#### Parce message log to eliminate noise using AI
+##### Host reboots
+##### UPS power alerts
+##### RPA high load alerts
+##### Detect an unauthoried user
