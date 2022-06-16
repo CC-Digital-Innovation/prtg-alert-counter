@@ -99,7 +99,7 @@ Add AI behind identifying and correlating alerts to crunch data and identify cor
 - Expedite escalation of important events
 - Bridge the gap between teams
 
-![bg left:33% fit](https://w7.pngwing.com/pngs/182/517/png-transparent-ted-eureka-university-college-of-engineering-osmania-university-student-education-organizing-miscellaneous-text-logo.png)
+![bg left:33% fit](images/eureka-transparent.png)
 
 ---
 
