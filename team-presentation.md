@@ -183,8 +183,7 @@ Estimated Time:  5 mins
 
 # **Time for Reflection**
 
-![](https://mermaid.ink/img/pako:eNqVkTFPwzAQhf_Kk2cvCFi8VCBQpY5tpS5ZLvElMU3OyLGJQtX_jtO06gjcYNnnd9-9s0-q8paVUcCHT0F4KgQ5oosdA8th4Co6L9i7nlH7gC3X3ZJbBHMcyEWNsaUICoyREcPkpEH0GHz3tVRSQ05WK4MHg_1GY0tHjTWVGq8-LxsvMmnsUt9zuLPXHiVVxxkVW0bJjRPJbA03INueG6SLxfk6uKaN8MImlz7-p8-hZYETWJ_KPEzlZUhdngej-6ZgDZ5-p2kcLmJsXdXe0S8QHmFduL5lNl77JJn5_GeHN5rSKid7cjZ_3GnOFioP3nOhTN5arinbLlQh5yxNn5Yiv1sXfVCmpm5grShFv5ukUiaGxDfRm6MmUH9VnX8AZsKqqQ)
-
+![](https://mermaid.ink/img/pako:eNptz7FOAzEMANBfsTyebkHAkgVRFaQuDKVSlyxW4uNMLwny-YRK1X8n7dF2wVPsPMv2AUOJjA4BPsukmfc-Qw0TGxhgTkYOJiXDRhJDVxTW3A1zbQan2PZkYD3Da9M0Tw7uHGyYEjyvbmZBYQdWzmxBo4TR1er9P3IrP6TxPNHBwxW0l4-1hB5u_I2_YSk67-Tg8dqALSbWRBLrjYdTg8c6PbFHV5-RdOfR52N101ck45coVhRdR8PILdJk5X2fAzrTiS9oKfShlP7U8RdCFGNz)
 ---
 <!-- 
 Presenter: JONNY LE 
