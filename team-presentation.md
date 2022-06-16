@@ -29,7 +29,7 @@ style: |
   }
 ---
 
-![bg fit](https://user-images.githubusercontent.com/103965932/173462799-95b24a44-5926-426d-a1d2-92482b982c97.png)
+![bg fit](images/ai-logo.png)
 
 ---
 
