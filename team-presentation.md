@@ -184,6 +184,7 @@ Estimated Time:  5 mins
 # **Time for Reflection**
 
 ![](https://mermaid.ink/img/pako:eNptz7FOAzEMANBfsTyebkHAkgVRFaQuDKVSlyxW4uNMLwny-YRK1X8n7dF2wVPsPMv2AUOJjA4BPsukmfc-Qw0TGxhgTkYOJiXDRhJDVxTW3A1zbQan2PZkYD3Da9M0Tw7uHGyYEjyvbmZBYQdWzmxBo4TR1er9P3IrP6TxPNHBwxW0l4-1hB5u_I2_YSk67-Tg8dqALSbWRBLrjYdTg8c6PbFHV5-RdOfR52N101ck45coVhRdR8PILdJk5X2fAzrTiS9oKfShlP7U8RdCFGNz)
+
 ---
 <!-- 
 Presenter: JONNY LE 
