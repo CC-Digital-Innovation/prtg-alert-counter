@@ -59,12 +59,15 @@ Highlights:       Discuss how we as a team stepped through our initial ideas and
 Estimated Time:   2 mins
 -->
 Project ideas:
-- AI analysis of difficulty of customers
 - AI analysis of PRTG Alerts
+- AI analysis of Opsgenie
 - AI analysis of time spent trends
-- AI analysis of opsgenie
+- AI analysis of difficulty of customers
 
-
+<!--
+- buzzword/interest in AI
+- find its application in all tools and workflows
+-->
 
 ---
 <!-- 
@@ -106,6 +109,12 @@ Presenter: SUMMER MARKLEY
 Highlights: Discuss how we built our initial project plan and the use of our SmartSheet portal
 Estimated Time:  5 mins
 -->
+
+<div class="center">
+
+![w:1000px](images/project-manager-board.png)
+
+</div>
 
 ---
 
@@ -166,23 +175,42 @@ Deploying an AI solution that can work off prtg message data is harder to setup 
 -->
 
 ---
+<!-- 
+Presenter: GROUP
+Highlights: skit
+Estimated Time:  5 mins
+-->
 
 # **Time for Reflection**
 
 ![](https://mermaid.ink/img/pako:eNqVkTFPwzAQhf_Kk2cvCFi8VCBQpY5tpS5ZLvElMU3OyLGJQtX_jtO06gjcYNnnd9-9s0-q8paVUcCHT0F4KgQ5oosdA8th4Co6L9i7nlH7gC3X3ZJbBHMcyEWNsaUICoyREcPkpEH0GHz3tVRSQ05WK4MHg_1GY0tHjTWVGq8-LxsvMmnsUt9zuLPXHiVVxxkVW0bJjRPJbA03INueG6SLxfk6uKaN8MImlz7-p8-hZYETWJ_KPEzlZUhdngej-6ZgDZ5-p2kcLmJsXdXe0S8QHmFduL5lNl77JJn5_GeHN5rSKid7cjZ_3GnOFioP3nOhTN5arinbLlQh5yxNn5Yiv1sXfVCmpm5grShFv5ukUiaGxDfRm6MmUH9VnX8AZsKqqQ)
 
 ---
-
+<!-- 
+Presenter: JONNY LE 
+Highlights: differences from version 1
+Estimated Time:  2 mins
+-->
 # **Our Solution (Version 2.0)** 
 
 "Instead of using AI, we became the AI"
 
-Our new solution monitors the rate at which alerts are generated and programmatically protects our alert workflow process in the event a large spike in alers is received.  By simplifying our approach to the overall problem of controlling massive spikes (anomolies) in our PRTG alert, we were able to quickly bring to market a working solution that not only addresses our immediate need, but allows us to build upon with future releases. 
+Our new solution monitors the rate at which alerts are generated and programmatically protects our alert workflow process in the event a large spike in alerts is received.  By simplifying our approach to the overall problem of controlling massive spikes (anomolies) in our PRTG alert, we were able to quickly bring to market a working solution that not only addresses our immediate need, but allows us to build upon with future releases. 
+
+<!--
+- reiterate problem: alert spikes with no correlation
+- many alerts escalated and EACH needing manual intervention
+- our new solution programmatically monitors the rate of alerts and protects our alert workflow when that happens
+- solves same problem, but a different, faster, more fundamental approach
+-->
 
 ---
 
 <!--
 _backgroundColor: #1e1e1e
+Presenter: JONNY LE 
+Highlights: detailed logic flow
+Estimated Time:  5 mins
 -->
 
 # **Let's Look Under the Hood**
@@ -191,12 +219,16 @@ _backgroundColor: #1e1e1e
 ![w:900px](images/solution-flowchart-2.svg)
 
 <!--
-- 
+- picture two diagrams together
 - As a result...
 -->
 
 ---
-
+<!-- 
+Presenter: JONNY LE 
+Highlights: it works!
+Estimated Time: 2 mins
+-->
 # **Results**
 
 <div class="columns-2-33">
@@ -214,23 +246,24 @@ _backgroundColor: #1e1e1e
 </div>
 
 <!--
-- prevents mass, unnecessary alerts and ticket creation
-- proactive, automatic approach
-- custom, disgestable alert to escalate
-- top-left: example error sending mass alerts
-- bottom-left: api counter alerts
-- right: custom opsgenie alert, as oppose to mass alerts
+- unlike our first solution...
+- reiterate working features
+- mention for future demo
 -->
 
 ---
-
+<!-- 
+Presenter: BOB
+Highlights:
+Estimated Time: 2 mins
+-->
 # **Future Road Map**
 
 ![w:1200px](https://mermaid.ink/img/pako:eNq9kcFqwzAMhl9F6JxAnObk2yDtrZdul0EuIlZas9gujnwYpe8-m6QUxnYbEz5Y0qf_R-iGYzCMGs_kRQYPOcTKzHBgkhQZ9v5CfmTHXuAUyDi6rpgh4UOIjgTgPUd9PNZ9v_YWHsUGn0UkFRG1ll9AaPmAZ2hSFbSN6upG5VfBrjEb6oNcOD4HNE2Sc1IAZSRjP1u1a_mtzFlf2pvVw0a1RUG1mxF9NwINbfer_O7_Nun-ZhOs0HE-kzX5zLeCDpg5xwPq_DU8UZplwMHfM5qu5a57YyVE1BPNC1dIScLrpx9RS0z8gHpL50huo-5fllupdA)
 
 
 ### ROAD MAP
-#### Parce message log to eliminate noise using AI
+#### Parse message log to eliminate noise using AI
 ##### Host reboots
 ##### UPS power alerts
 ##### RPA high load alerts
