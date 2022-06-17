@@ -3,8 +3,22 @@
 threshold = 10
 # notfication template id to pause
 notification_id = #
+# TRACE | DEBUG | INFO | SUCCESS | WARNING | ERROR | CRITICAL | QUIET
+# Note that this does not affect LogStash log levels.
+log_level = DEBUG
+syslog = false
+sys_log_host = 
+sys_log_port = 514
 
 [prtg]
 base_url = http://example.com
 username = ******
 passhash = ******
+
+[opsgenie]
+base_url = https://example.com
+api_key  = ******
+
+[logstash]
+host = ###.###.###.###
+port = #

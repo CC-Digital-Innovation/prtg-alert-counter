@@ -1,18 +1,38 @@
 import asyncio
+import logging
+import logging.handlers
+import sys
 from datetime import datetime
-from typing import Optional
 
-from fastapi import FastAPI, Form
+from fastapi import FastAPI, Request
+from logstash import LogstashHandler
 from loguru import logger
 
 from config import config
 import opsgenie
 import prtg
 
+LOG_LEVEL = config['main']['log_level'].upper()
+SYSLOG = config['main'].getboolean('syslog')
+SYSLOG_HOST = config['main']['sys_log_host']
+SYSLOG_PORT = config['main'].getint('sys_log_port')
+LOGSTASH_HOST = config['logstash']['host']
+LOGSTASH_PORT = config['logstash'].getint('port')
 THRESHOLD = config['main'].getint('threshold')
 NOTIFICATION_ID = config['main']['notification_id']
 
-app = FastAPI()
+# configure logs and syslog
+if LOG_LEVEL != 'QUIET':
+    if SYSLOG:
+        logger.add(logging.handlers.SysLogHandler(address = (SYSLOG_HOST, SYSLOG_PORT)), level=LOG_LEVEL)
+
+# configure logstash
+logstash_logger = logging.getLogger('prtg-alert')
+logstash_logger.setLevel(logging.INFO)
+logstash_logger.addHandler(LogstashHandler(LOGSTASH_HOST, LOGSTASH_PORT))
+
+with logger.catch():
+    app = FastAPI()
 counter_lock = asyncio.Lock()
 
 class Counter:
@@ -37,89 +57,31 @@ class Counter:
 
 ingest_counter = Counter()
 
-@app.get('/increment')
-async def increment(date_time: str):
-    '''\f
-        For testing counter
-    '''
-    parsed_datetime = datetime.strptime(date_time, '%m/%d/%Y %I:%M:%S %p')
-    count = await ingest_counter.increment(parsed_datetime)
-    # find delay between alert time and the time counted
-    delay = (datetime.utcnow() - parsed_datetime).total_seconds()
-    logger.info(f'Count: {count} | Delay: {delay}')
-    is_paused = False
-    paused = False
-    if count >= THRESHOLD:
-        if prtg.get_notification_status(NOTIFICATION_ID):
-            prtg.pause_notification(NOTIFICATION_ID)
-            # build and send Opsgenie alert
-            message = f'[Alert-Counter] PRTG Alert Threshold Exceeded (count: {THRESHOLD}). \
-                Notification template with ID {NOTIFICATION_ID} paused.'
-            description = 'Alert-Counter counts the number of alerts from PRTG and will pause \
-                a configured notification template after a threshold (number of alerts per second) is met.'
-            opsgenie.send_alert(message, description=description, tags=['jle-dev', 'PRTG', 'Alert-Counter'])
-            paused = True
-        is_paused = True
-    return {
-        'count': count,
-        'threshold_reached': is_paused,
-        'paused': paused,
-        'delay': delay
-    }
-
 @app.post('/log')
-async def create_log(device: str = Form(...),
-                linkdevice: str = Form(...),
-                sitename: str = Form(...),
-                serviceurl: Optional[str] = Form(None),
-                settings: str = Form(...),
-                date_time: str = Form(..., alias='datetime'),
-                history: Optional[str] = Form(None),
-                host: str = Form(...),
-                down: Optional[str] = Form(None),
-                downtime: str = Form(...),
-                lastdown: str = Form(...),
-                nodename: Optional[str] = Form(None),
-                location: Optional[str] = Form(None),
-                group: str = Form(...),
-                linkgroup: str = Form(...),
-                lastmessage: str = Form(...),
-                lastup: str = Form(...),
-                uptime: str = Form(...),
-                status: str = Form(...),
-                statesince: str = Form(...),
-                sensor: str = Form(...),
-                linksensor: str = Form(...),
-                probe: str = Form(...),
-                priority: str = Form(...),
-                commentssensor: Optional[str] = Form(None),
-                commentsdevice: Optional[str] = Form(None),
-                commentsgroup: Optional[str] = Form(None),
-                commentsprobe: Optional[str] = Form(None),
-                colorofstate: Optional[str] = Form(None),
-                iconofstate: Optional[str] = Form(None),
-                sensor_id: str = Form(..., alias='id')) -> dict:
-    parsed_datetime = datetime.strptime(date_time, '%m/%d/%Y %I:%M:%S %p')
+async def log(request: Request) -> dict:
+    form_data = await request.form()
+    parsed_datetime = datetime.strptime(form_data['datetime'], '%m/%d/%Y %I:%M:%S %p')
     count = await ingest_counter.increment(parsed_datetime)
     # find delay between alert time and the time counted
     delay = (datetime.utcnow() - parsed_datetime).total_seconds()
     logger.info(f'Count: {count} | Delay: {delay}s')
-    is_paused = False
-    paused = False
+    logger.info(f'{form_data["group"]}/{form_data["device"]}/{form_data["sensor"]} - {form_data["lastmessage"]}')
     if count >= THRESHOLD:
+        logger.warning('Threshold reached!')
         if prtg.get_notification_status(NOTIFICATION_ID):
+            logger.info('Notification template is not paused.')
+            logger.info('Pausing notification template...')
             prtg.pause_notification(NOTIFICATION_ID)
+            logger.info(f'Notification template with ID {NOTIFICATION_ID} has been paused.')
             # build and send Opsgenie alert
             message = f'[Alert-Counter] PRTG Alert Threshold Exceeded (count: {THRESHOLD}). \
                 Notification template with ID {NOTIFICATION_ID} paused.'
             description = 'Alert-Counter counts the number of alerts from PRTG and will pause \
                 a configured notification template after a threshold (number of alerts per second) is met.'
-            opsgenie.send_alert(message, description=description, tags=['jle-dev', 'PRTG', 'Alert-Counter'])
-            paused = True
-        is_paused = True
-    return {
-        'count': count,
-        'threshold_reached': is_paused,
-        'paused': paused,
-        'delay': delay
-    }
+            logger.info('Sending Opsgenie alert...')
+            response = opsgenie.send_alert(message, description=description, tags=['jle-dev', 'PRTG', 'Alert-Counter'])
+            logger.info('Opsgenie alert sent.')
+            logger.debug(response)
+            
+    # log to logstash
+    logstash_logger.info(form_data['lastmessage'], extra=form_data)
