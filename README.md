@@ -8,6 +8,7 @@ An intermediate solution to protect alerting workflows from anomalies and alert 
     * [Requirements](#requirements)
     * [Installation](#installation)
     * [Usage](#usage)
+* [Presentation](#presentation)
 * [Author](#author)
 * [License](#license)
 
@@ -30,9 +31,9 @@ The alert counter may pause and protect the typical workflow but alerts shouldn'
 
 1. Clone repo from GitHub:
 ```bash
-git clone https://github.com/American-Ingenuity/prtg-alert-counter.git
+git clone https://github.com/CC-Digital-Innovation/prtg-alert-counter.git
 ```
-* or download the [zip](https://github.com/American-Ingenuity/prtg-alert-counter/archive/refs/heads/main.zip)
+* or download the [zip](https://github.com/CC-Digital-Innovation/prtg-alert-counter/archive/refs/heads/main.zip)
 
 2. Configure and rename `config.ini.example` file to `config.ini`.
 
@@ -56,6 +57,10 @@ Run the API:
 ```bash
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
+
+## Presentation
+
+In 2022, Digital Innovation held a meeting where this project was presented by our team. The presentation was created using markdown and rendered with Marp. The HTML rendered version can be viewed under the `html` branch or [here](https://github.com/CC-Digital-Innovation/prtg-alert-counter/blob/html/index.html).
 
 ## Author
 * Jonny Le <<jonny.le@computacenter.com>>
