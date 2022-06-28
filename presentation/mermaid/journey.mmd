@@ -1,0 +1,17 @@
+graph TD
+    A[Deploying PRTG] --> B(Create an amazon account)
+    B --> C(Build an ec2 instance)
+    C --> D(Build/install/configure prtg)
+    D --> E(Deploy servers to create sensors on prtg server)
+
+graph TD
+    A[Deploying Log Server] --> B(Deploy a server for collecting logs )
+    B --> C(Install greylog application )
+    C --> D(Configure greylog to collect logs from prtg )
+
+graph TD
+    A[Deploying Tensorflow ] --> B(Deploy an ec2 ubuntu and run updates  )
+    B --> C(Install tensorflow packages and run updates if needed )
+    C --> D(Pull logs from syslog)
+    D --> E(Train model)
+    E --> F(Test model)

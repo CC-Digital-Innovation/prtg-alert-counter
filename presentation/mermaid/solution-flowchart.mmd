@@ -1,0 +1,13 @@
+flowchart LR
+    start([Issue causing\n PRTG alert]) --> count_start[PRTG HTTP\n action on\n Alert Counter\n API]
+    subgraph Alert Counter
+        count_start --> count[Count alert]
+        count --> time{Duration\n reached?}
+        time -- Yes --> reset[Reset counter]
+        time -- No --> threshold{Threshold\n reached?}
+        reset --> threshold
+        threshold -- No --> null([Do nothing])
+        threshold -- Yes --> pause_prtg[Pause Opsgenie\n notification\n trigger]
+        pause_prtg --> send_opsgenie_alert[Alert Opsgenie\n of anomaly]
+    end
+    pause_prtg -. Pause state ..-> opsgenie_state{Notification\n trigger\n state}

@@ -1,0 +1,28 @@
+name:  AI
+
+on: 
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy images
+        run:  mkdir build && cp -R images build/images
+
+      - name: Marp Build HTML
+        uses: docker://marpteam/marp-cli:v2.0.4
+        with:
+          args: --html team-presentation.md -o build/index.html
+        env:
+          MARP_USER: root:root
+
+      - name: Deploy to html branch
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: html
+          folder: build

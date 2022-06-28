@@ -1,0 +1,10 @@
+flowchart LR
+    %% Opsgenie
+    start([Issue causing\n PRTG alert]) --> opsgenie_state{Notification\n trigger\n state}
+    subgraph Opsgenie
+        opsgenie_state -- Started --> delay
+        opsgenie_state -- Paused --> null2([Do nothing])
+        delay{{X\n minute\n delay}} --> opsgenie_start
+        opsgenie_start[PRTG HTTP\n action on\n Opsgenie\n Integration]
+        opsgenie_start --> opsgenie_alert([Opsgenie\n alert\n created])
+    end
